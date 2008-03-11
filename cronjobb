@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd $HOME/Utveckling/imapfilter
+pids=`ps auxwww | grep ./imaploop | grep -v grep | wc -l`
+
+if [ "$pids" -gt 0 ] ; then
+  exit 0;
+fi
+
+./imaploop >/tmp/imapfilter.out 2>/tmp/imapfilter.err & 
+#disown
+
+exit 0 

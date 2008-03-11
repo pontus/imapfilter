@@ -1,0 +1,4 @@
+#!/bin/sh
+
+while true; do ./imapfilter.py ; sleep 15; done
+
